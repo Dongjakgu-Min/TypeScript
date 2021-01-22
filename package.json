@@ -4,12 +4,18 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node bin/www.ts"
+    "start": "tsc && nodemon --exec ts-node dist/bin/www.js",
+    "dev": "ts-node bin/www.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
     "@types/cookie-parser": "^1.4.2",
     "@types/debug": "^4.1.5",
     "@types/dotenv": "^8.2.0",
@@ -18,11 +24,6 @@
     "@types/morgan": "^1.9.2",
     "@types/node": "^14.14.22",
     "@types/pug": "^2.0.4",
-    "nodemon": "^2.0.7",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
-  },
-  "dependencies": {
     "cookie-parser": "^1.4.5",
     "debug": "^4.3.1",
     "dotenv": "^8.2.0",
