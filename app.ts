@@ -4,7 +4,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import indexRouter from './router/index';
-
+import memoRouter from './router/api/memo';
 const app = express();
 
 app.set('views', path.join(process.cwd(), 'views'));
@@ -18,6 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(process.cwd(), 'public')));
 
 app.use('/', indexRouter);
+app.use('/api/memo', memoRouter);
 
 app.use(function(req: express.Request, res: express.Response, next: express.NextFunction) {
   next(createError(404));
